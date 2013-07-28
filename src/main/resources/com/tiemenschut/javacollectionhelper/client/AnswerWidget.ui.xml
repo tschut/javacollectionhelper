@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style src="answerstyle.css" />
+		
+	<g:FlowPanel>
+		<g:FlowPanel styleName="{style.arrow}">
+			<g:Image url="images/arrowdown.png" />
+		</g:FlowPanel>
+		<g:Label ui:field="answer" styleName="{style.answer}"></g:Label>
+	</g:FlowPanel>
+</ui:UiBinder> 
