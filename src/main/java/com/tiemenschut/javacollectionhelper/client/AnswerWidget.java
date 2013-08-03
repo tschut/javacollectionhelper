@@ -6,8 +6,8 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
 public class AnswerWidget extends Composite {
@@ -18,21 +18,34 @@ public class AnswerWidget extends Composite {
     }
 
     @UiField
-    protected Label        answer;
-    private AnswerModel    model;
-    private HandlerManager eventbus;
+    protected Button             answer;
+    private final AnswerModel    model;
+    private final HandlerManager eventbus;
 
-    public AnswerWidget(HandlerManager eventbus, AnswerModel model) {
+    public AnswerWidget(HandlerManager eventbus, AnswerModel model, final AnswerModel otherAnswer) {
         this.eventbus = eventbus;
         this.model = model;
         initWidget(uiBinder.createAndBindUi(this));
 
+        answer.setStylePrimaryName("pure-button");
+        answer.setStyleName("pure-button-not-selected", true);
         answer.setText(model.getAnswer());
+
+        eventbus.addHandler(AnswerClickedEvent.TYPE, new AnswerClickedEventHandler() {
+            @Override
+            public void onAnswerClicked(AnswerClickedEvent event) {
+                if (event.getAnswer().equals(otherAnswer)) {
+                    answer.setStyleName("pure-button");
+                    answer.setStyleName("pure-button-not-selected", true);
+                }
+            }
+        });
     }
 
     @UiHandler("answer")
     protected void answerClicked(ClickEvent event) {
-        answer.addStyleName("selected");
+        answer.setStyleName("pure-button");
+        answer.setStyleName("pure-button-selected", true);
         eventbus.fireEvent(new AnswerClickedEvent(model));
     }
 

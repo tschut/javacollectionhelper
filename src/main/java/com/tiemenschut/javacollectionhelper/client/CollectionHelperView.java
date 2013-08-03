@@ -34,8 +34,8 @@ public class CollectionHelperView extends Composite {
         rollbackTo(index);
         maintable.setWidget(index, 0, new QuestionWidget(question.getQuestion()));
         maintable.getFlexCellFormatter().setColSpan(index, 0, 2);
-        maintable.setWidget(index + 1, 0, new AnswerWidget(eventbus, question.getAnswers()[0]));
-        maintable.setWidget(index + 1, 1, new AnswerWidget(eventbus, question.getAnswers()[1]));
+        maintable.setWidget(index + 1, 0, new AnswerWidget(eventbus, question.getAnswers()[0], question.getAnswers()[1]));
+        maintable.setWidget(index + 1, 1, new AnswerWidget(eventbus, question.getAnswers()[1], question.getAnswers()[0]));
         currentQuestions = question.getIndex() + 1;
     }
 
