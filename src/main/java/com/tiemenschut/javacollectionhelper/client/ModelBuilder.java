@@ -9,11 +9,11 @@ public abstract class ModelBuilder {
     private static final String MAP_WHICH_ORDERING_INSERTION     = "Insertion";
     private static final String MAP_WHICH_ORDERING_KEY           = "Key";
 
-    private static final String SET_NEEDS_ORDER                  = "Is the order of the values in de collection important?";
+    private static final String SET_NEEDS_ORDER                  = "Is the order of the values in the collection important?";
     private static final String SET_NEEDS_ORDER_YES              = "Yes";
     private static final String SET_NEEDS_ORDER_NOPE             = "Nope";
 
-    private static final String MAP_NEEDS_ORDER                  = "Is the order of the key/values pairs in de collection important?";
+    private static final String MAP_NEEDS_ORDER                  = "Is the order of the key/values pairs in the collection important?";
     private static final String MAP_NEEDS_ORDER_YES              = "Yes";
     private static final String MAP_NEEDS_ORDER_NOPE             = "Nope";
 
