@@ -3,9 +3,11 @@ package com.tiemenschut.javacollectionhelper.client;
 public class FinalAnswerModel {
     private final String answer;
     private final String url;
+    private int          index;
 
-    public FinalAnswerModel(String answer, String url) {
+    public FinalAnswerModel(int index, String answer, String url) {
         super();
+        this.index = index;
         this.answer = answer;
         this.url = url;
     }
@@ -16,5 +18,9 @@ public class FinalAnswerModel {
 
     public String getUrl() {
         return url;
+    }
+
+    public int getIndex() {
+        return index;
     }
 }

@@ -45,9 +45,11 @@ public class CollectionHelperView extends Composite {
         }
     }
 
-    public void setFinalAnswer(FinalAnswerModel next) {
-        int index = currentQuestions * ROWS_PER_QUESTION;
-        maintable.setWidget(index, 0, new FinalAnswerWidget(next));
+    public void setFinalAnswer(FinalAnswerModel finalAnswer) {
+        int index = finalAnswer.getIndex() * ROWS_PER_QUESTION;
+        rollbackTo(index);
+        maintable.setWidget(index, 0, new FinalAnswerWidget(finalAnswer));
         maintable.getFlexCellFormatter().setColSpan(index, 0, 2);
+        currentQuestions = finalAnswer.getIndex();
     }
 }

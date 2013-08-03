@@ -30,17 +30,18 @@ public abstract class ModelBuilder {
     private static final String VALUES_OR_MAP_MAP                = "Pairs";
 
     public static QuestionModel build() {
-        FinalAnswerModel arrayList = new FinalAnswerModel("ArrayList", "http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html");
-        FinalAnswerModel linkedList = new FinalAnswerModel("LinkedList",
+        FinalAnswerModel arrayList = new FinalAnswerModel(3, "ArrayList",
+                "http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html");
+        FinalAnswerModel linkedList = new FinalAnswerModel(3, "LinkedList",
                 "http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html");
-        FinalAnswerModel hashSet = new FinalAnswerModel("HashSet", "http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html");
-        FinalAnswerModel linkedHashSet = new FinalAnswerModel("LinkedHashSet",
+        FinalAnswerModel hashSet = new FinalAnswerModel(3, "HashSet", "http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html");
+        FinalAnswerModel linkedHashSet = new FinalAnswerModel(4, "LinkedHashSet",
                 "http://docs.oracle.com/javase/7/docs/api/java/util/LinkedHashSet.html");
-        FinalAnswerModel treeSet = new FinalAnswerModel("TreeSet", "http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html");
-        FinalAnswerModel hashMap = new FinalAnswerModel("HashMap", "http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html");
-        FinalAnswerModel linkedHashMap = new FinalAnswerModel("LinkedHashMap",
+        FinalAnswerModel treeSet = new FinalAnswerModel(4, "TreeSet", "http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html");
+        FinalAnswerModel hashMap = new FinalAnswerModel(2, "HashMap", "http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html");
+        FinalAnswerModel linkedHashMap = new FinalAnswerModel(3, "LinkedHashMap",
                 "http://docs.oracle.com/javase/7/docs/api/java/util/LinkedHashMap.html");
-        FinalAnswerModel treeMap = new FinalAnswerModel("TreeMap", "http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html");
+        FinalAnswerModel treeMap = new FinalAnswerModel(3, "TreeMap", "http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html");
 
         QuestionModel setTreeOrLinked = new QuestionModel(SET_WHICH_ORDERING, 3, new AnswerModel(SET_WHICH_ORDERING_INSERTION,
                 linkedHashSet), new AnswerModel(SET_WHICH_ORDERING_VALUE, treeSet));
