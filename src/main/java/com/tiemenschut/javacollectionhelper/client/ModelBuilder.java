@@ -53,8 +53,8 @@ public abstract class ModelBuilder {
         QuestionModel mapTreeOrLinked = new QuestionModel(MAP_WHICH_ORDERING, 2, new AnswerModel(MAP_WHICH_ORDERING_INSERTION,
                 linkedHashMap), new AnswerModel(MAP_WHICH_ORDERING_KEY, treeMap));
 
-        QuestionModel listOrSet = new QuestionModel(LIST_OR_SET, 1, new AnswerModel(LIST_OR_SET_UNIQUE, listArrayOrLinked),
-                new AnswerModel(LIST_OR_SET_DUPES, setOrderedOrNot));
+        QuestionModel listOrSet = new QuestionModel(LIST_OR_SET, 1, new AnswerModel(LIST_OR_SET_DUPES, listArrayOrLinked), new AnswerModel(
+                LIST_OR_SET_UNIQUE, setOrderedOrNot));
         QuestionModel mapOrderedOrNot = new QuestionModel(MAP_NEEDS_ORDER, 1, new AnswerModel(MAP_NEEDS_ORDER_NOPE, hashMap),
                 new AnswerModel(MAP_NEEDS_ORDER_YES, mapTreeOrLinked));
 
